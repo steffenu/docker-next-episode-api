@@ -1,0 +1,37 @@
+# Storing TV Series Infomration
+
+# Node Endpoints
+################
+# /all
+# /today
+# /tommorow
+
+# DB INFOMRATION
+################
+# id , name , state
+# 12345 , The WItcher , Running
+
+# Choose correct version depending on your docker engine version
+version: "2"
+
+services:
+  node:
+    build:
+      context: .
+      #You can not copy a file into a container with docker compose.
+      #dockerfile: Dockerfile.node # only v3 docker
+    # host port to node port
+    ports:
+      - "80:5000"
+    links:
+      - db:mariadb
+      # !! hostname = mariadb in mariadb.js
+
+  db:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql

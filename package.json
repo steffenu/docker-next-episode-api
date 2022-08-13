@@ -1,0 +1,24 @@
+{
+  "name": "NextEpisodeDocker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "mariadb": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "push": "git add . && git commit -m 'update' && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steffenu/docker-next-episode-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steffenu/docker-next-episode-api/issues"
+  },
+  "homepage": "https://github.com/steffenu/docker-next-episode-api#readme"
+}
