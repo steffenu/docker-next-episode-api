@@ -28,7 +28,7 @@ services:
       # !! hostname = mariadb in mariadb.js
 
   db:
-    image: linuxserver/mariadb:latest
+    image: mariadb
     environment:
       MARIADB_ROOT_PASSWORD: example
     ports:
