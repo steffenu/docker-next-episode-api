@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:gallium-alpine3.16
 
 WORKDIR /usr/src/app
 
