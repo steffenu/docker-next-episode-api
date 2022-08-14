@@ -1,7 +1,7 @@
 const client = require("./mariadb"); // connecting to database
 const handler = require("./api/handler");
 
-const url_local = "http://localhost/";
+const url_local = "http://192.168.1.126/";
 
 const routes = require("express").Router();
 // FIXME https://stackoverflow.com/a/32064391

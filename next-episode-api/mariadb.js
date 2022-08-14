@@ -3,7 +3,6 @@ const client = mariadb.createPool({
   host: "mariadb",
   user: "root",
   database: "eventghost",
-  password: "example",
 });
 
 module.exports = client;
