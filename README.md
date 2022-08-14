@@ -1,14 +1,10 @@
----
-category: docker
----
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 # Next Episode Api
 
 Add Tv series to a list. See what Tv series have a episode airing today / tomorrow.
 
 Useful for creating Notifications.
-
-![](https://img.shields.io/badge/NextEpisodeApi-blue.svg?logo=Docker&color=fff)
 
 ### Docker Container including :
 
@@ -47,7 +43,7 @@ It will look up the series name via the Tvmaze api and add the following entry t
 | --- | ----------- | ------- |
 | 123 | The Witcher | Running |
 
-# Endpoints
+# Endpoints ![](https://img.shields.io/badge/NextEpisodeApi-blue.svg?logo=Docker&color=fff)
 
 `http://localhost/all` all series you added \
 `http://localhost/add/:seriesName` add series by name (closest match) \
