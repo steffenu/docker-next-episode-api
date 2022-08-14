@@ -1,6 +1,4 @@
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-
-# Next Episode Api
+# ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) Next Episode Api
 
 Add Tv series to a list. See what Tv series have a episode airing today / tomorrow.
 
