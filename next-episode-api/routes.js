@@ -51,5 +51,55 @@ routes.get("/tomorrow", async (req, res) => {
   console.log("seriesArray:", seriesArray);
   res.json({ tommorrow: seriesArray });
 });
+// FÜR  ZUSATZ ID 23
+routes.get("/shutdown", async (req, res) => {
+  function turnOffLightWithDelay() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+  
+    var raw = JSON.stringify({ "on": false });
+  
+    var requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+  
+    fetch("http://192.168.1.105/api/iir8exLf7O0J4SCsHN0SqTgiUb5EXYQPrBZBxf-a/lights/23/state", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+  
+  // Delay the execution of the function by 180 seconds (180,000 milliseconds)
+  setTimeout(turnOffLightWithDelay, 180000);
+  
+});
+// FÜR  PC ID 22
+routes.get("/shutdown2", async (req, res) => {
+  function turnOffLightWithDelay() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+  
+    var raw = JSON.stringify({ "on": false });
+  
+    var requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+  
+    fetch("http://192.168.1.105/api/iir8exLf7O0J4SCsHN0SqTgiUb5EXYQPrBZBxf-a/lights/22/state", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+  
+  // Delay the execution of the function by 180 seconds (180,000 milliseconds)
+  setTimeout(turnOffLightWithDelay, 180000);
+  
+});
 
 module.exports = routes;
