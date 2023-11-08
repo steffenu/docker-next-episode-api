@@ -54,22 +54,25 @@ routes.get("/tomorrow", async (req, res) => {
 // FÜR  ZUSATZ ID 23
 routes.get("/shutdown", async (req, res) => {
   function turnOffLightWithDelay() {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-  
-    var raw = JSON.stringify({ "on": false });
-  
-    var requestOptions = {
-      method: 'PUT',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
+    var axios = require('axios');
+    var data = JSON.stringify({"on":false});
+    
+    var config = {
+      method: 'put',
+      url: 'http://192.168.1.105/api/iir8exLf7O0J4SCsHN0SqTgiUb5EXYQPrBZBxf-a/lights/23/state',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
     };
-  
-    fetch("http://192.168.1.105/api/iir8exLf7O0J4SCsHN0SqTgiUb5EXYQPrBZBxf-a/lights/23/state", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   
   // Delay the execution of the function by 180 seconds (180,000 milliseconds)
@@ -79,22 +82,25 @@ routes.get("/shutdown", async (req, res) => {
 // FÜR  PC ID 22
 routes.get("/shutdown2", async (req, res) => {
   function turnOffLightWithDelay() {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-  
-    var raw = JSON.stringify({ "on": false });
-  
-    var requestOptions = {
-      method: 'PUT',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
+    var axios = require('axios');
+    var data = JSON.stringify({"on":false});
+    
+    var config = {
+      method: 'put',
+      url: 'http://192.168.1.105/api/iir8exLf7O0J4SCsHN0SqTgiUb5EXYQPrBZBxf-a/lights/22/state',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
     };
-  
-    fetch("http://192.168.1.105/api/iir8exLf7O0J4SCsHN0SqTgiUb5EXYQPrBZBxf-a/lights/22/state", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   
   // Delay the execution of the function by 180 seconds (180,000 milliseconds)
