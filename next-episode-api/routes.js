@@ -53,6 +53,9 @@ routes.get("/tomorrow", async (req, res) => {
 });
 // FÜR  ZUSATZ ID 23
 routes.get("/shutdown", async (req, res) => {
+
+  res.send("ZUSATZ SHUTDOWN IN 180 SECS");
+
   function turnOffLightWithDelay() {
     var axios = require('axios');
     var data = JSON.stringify({"on":false});
@@ -81,6 +84,8 @@ routes.get("/shutdown", async (req, res) => {
 });
 // FÜR  PC ID 22
 routes.get("/shutdown2", async (req, res) => {
+  res.send("PC SHUTDOWN IN 180 SECS");
+
   function turnOffLightWithDelay() {
     var axios = require('axios');
     var data = JSON.stringify({"on":false});
